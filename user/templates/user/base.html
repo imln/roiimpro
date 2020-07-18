@@ -9,11 +9,11 @@
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <ul class="nav navbar-nav">
- {# Django Home Link / Admin Link / Register Link#}
           <li><a class="navbar-brand" href="{% url 'user:index' %}">DJANGO</a></li>
-          {# Some logic on what to display for last item#}
+
           {% if user.is_authenticated %}
-            <li><a href="{% url 'user:user_logout' %}">Logout</a></li>
+            <li><a class="navbar-link" href="{% url 'user:user_logout' %}">Logout</a></li>
+            <li><a class="navbar-link" href="{% url 'cart:cart_index' %}">Cart</a></li>
           {% else %}
 
             <li><a class="navbar-link" href="{% url 'user:register' %}">Register</a></li>
