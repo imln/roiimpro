@@ -8,10 +8,12 @@
       {% else %}
         <h1>Register Here</h1>
         <h3>Just fill out the form.</h3>
-<form enctype="multipart/form-data" method="POST">
+        <form enctype="multipart/form-data" method="POST">
           {% csrf_token %}
-          {{ user_form.as_p }}
-          <input type="submit" name="" value="Register">
+            <fieldset class="form-group">
+                {{ user_form.as_p }}
+            </fieldset>
+          <input style="background: black; padding:2%; font-size: 2rem; color:white;" class="btn btn-outline-info" type="submit" name="" value="Register">
         </form>
         
       {% endif %}
