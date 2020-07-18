@@ -20,7 +20,7 @@ def index(request):
 @login_required
 def user_logout(request):
     logout(request)
-    return HttpResponseRedirect(reverse('index'))
+    return HttpResponseRedirect(reverse('user:index'))
 
 
 def register(request):
@@ -49,8 +49,7 @@ def user_login(request):
         if user:
             if user.is_active:
                 login(request, user)
-                print("lnflag 1")
-                return HttpResponseRedirect(reverse('user:login'))
+                return HttpResponseRedirect(reverse('user:index'))
             else:
                 return HttpResponse("Your account was inactive.")
         else:
