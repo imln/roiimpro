@@ -1,1 +1,1 @@
-web: gunicorn roiimpro.wsgi --log-file -
+web: gunicorn roiimpro.wsgi
