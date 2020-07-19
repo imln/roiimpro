@@ -25,7 +25,7 @@ SECRET_KEY = '8lcixb_e#xx6=_k+m0dk1=@qmx+47^we8!l67hs1curf+q8=ps'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://roiimpro.herokuapp.com/']
+ALLOWED_HOSTS = ['https://roiimpro.herokuapp.com/','127.0.0.1','localhost']
 
 
 # Application definition
@@ -118,5 +118,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 STATIC_URL = '/static/'
