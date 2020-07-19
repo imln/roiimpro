@@ -25,7 +25,7 @@ SECRET_KEY = '8lcixb_e#xx6=_k+m0dk1=@qmx+47^we8!l67hs1curf+q8=ps'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://roiimpro.herokuapp.com/','127.0.0.1','localhost']
+ALLOWED_HOSTS = ['https://roiimpro.herokuapp.com/','https://roiimproj.herokuapp.com/','127.0.0.1','localhost']
 
 
 # Application definition
