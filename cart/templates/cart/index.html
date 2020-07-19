@@ -1,10 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>cart</h1>
-</body>
-</html>
+{% extends "user/base.html" %}
+{% block body_block %}
+<div class="container">
+  <div class="jumbotron">
+
+    {% if user.is_authenticated %}
+
+      <h2>Hello {{ user.username }} , these are the items in your cart</h2>
+      <div>
+            <ul class="list-group">
+                <li class="list-group-item">Items1 <span class="badge">120 $</span></li>
+                <li class="list-group-item">Items2 <span class="badge">50 $</span></li>
+                <li class="list-group-item">Items3 <span class="badge">30 $</span></li>
+            </ul>
+      </div>
+
+    <form method="post" action="{% url 'cart:checkout' %}">
+    {% csrf_token %}
+    <input type="hidden" id="payRs" name="payRs" value="200">
+    <input type="submit" name="submit" value="Checkout" class="btn btn-primary btn-block">
+    </form>
+
+    {% else %}
+        <h1>Welcome to the ROIIM !</h1>
+        <h2>Register or Login if you'd like to</h2>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
